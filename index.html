@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <title>JS基础-20261014</title>
+</head>
+<body>
+    <h1>JS基础</h1>
+    <p>王宜为 - 20261014 - JS基础学习</p>
+
+    <hr>
+    <h2>💡灯泡切换demo（点击灯泡开关）</h2>
+    <p>点击灯泡可以切换亮灭</p>
+    <img id="myImage" onclick="changeImage()"
+         src="https://www.w3schools.com/js/pic_bulboff.gif"
+         width="100" height="180">
+
+    <script>
+        function changeImage(){
+            const element = document.getElementById('myImage');
+            console.log(element);
+            if (element.src.includes("pic_bulboff.gif")){
+                element.src = "https://www.w3schools.com/js/pic_bulbon.gif";
+                console.log("灯亮了");
+            }else{
+                element.src = "https://www.w3schools.com/js/pic_bulboff.gif";
+                console.log("灯灭了");
+            }
+        }
+    </script>
+
+    <hr>
+    <h2>📊BMI计算演示（控制台查看结果）</h2>
+    <p>按F12打开控制台查看打印信息</p>
+    <script>
+        let weight = prompt("请输入你的体重(kg)");
+        let height = prompt("请输入你的身高(m)");
+
+        console.log("weight原始类型：", typeof weight);
+        console.log("height原始类型：", typeof height);
+
+        weight = parseFloat(weight);
+        height = parseFloat(height);
+
+        let bmi = weight / (height * height);
+        console.log("你的BMI值 = ", bmi);
+
+        let level;
+        if(bmi <18.5){
+            level = "偏瘦";
+        }else if(bmi >=18.5 && bmi <24){
+            level = "正常";
+        }else if(bmi >=24 && bmi <28){
+            level = "超重";
+        }else{
+            level = "肥胖";
+        }
+        console.log("BMI评估结果："+level);
+        alert(`你的BMI=${bmi.toFixed(2)}，评估：${level}`);
+    </script>
+
+    <!-- JS基础练习代码，全部放在这里 -->
+    <script>
+        // 区分大小写
+        let a = 10;
+        console.log(a)
+        let A = 20;
+        console.log(A)
+
+        //弱类型变量
+        let name = '王宜为'
+        console.log(typeof(name))
+        name = 100
+        console.log(typeof(name))
+
+        const age = 18
+        console.log(age)
+
+        function sayHello() {
+            let a = 10000;
+            console.log(a)
+        }
+        sayHello()
+
+        let gril;
+        console.log(typeof(gril))
+        let boy = "lisi";
+        console.log(typeof(boy))
+
+        let isTrue = true;
+        console.log(typeof(isTrue))
+        let isFalse = "false";
+        console.log(typeof(isFalse))
+
+        let age2 = 18;
+        let name2 = "王宜为";
+        let greeting = `你好,我是${name2},我今年${age2}岁`;
+        console.log(greeting)
+
+        let str = "你好,我是" + name2 + ",我今年" + age2 + "岁";
+        console.log(str)
+
+        console.log(name2.length)
+        console.log(name2.charAt(0))
+        let subName2 = name2.substring(0, 3)
+        console.log(subName2)
+        let subName22 = name2.slice(0, 3)
+        console.log(subName22)
+        console.log(name2.indexOf('i'))
+        console.log(name2.lastIndexOf('i'))
+
+        let num = 100;
+        console.log(typeof(num))
+        let numStr = num.toString()
+        console.log(typeof(numStr))
+
+        console.log('20261014 JS基础学习 王宜为')
+    </script>
+</body>
+</html>
